@@ -13,6 +13,7 @@ const btn7 = document.querySelector(".btn7");
 //Imagenes Automata
 const imgAuPila = document.querySelector(".Au-Pila");
 const imgAuPilaAu2 = document.querySelector(".Au-Pila-au2");
+
 const imgUnion = document.querySelector(".Au-Union");
 const imgConca = document.querySelector(".Au-Concatenacion");
 
@@ -44,11 +45,13 @@ let numAlfAu_Au2;
 let numAlfPila_Au2;
 let numEstados_Au2;
 
+
 let matrizUnion = [];
 
 let numTransacciones_Au2;
 let Eabc = ["λ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 let abcPila = ["λ","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","Q","R","S","T","U","V","W","X","Y","Z"];
+
 
 //Clase Automata
 class automata{
@@ -60,7 +63,6 @@ class automata{
     }
 }
 
-//Clase Camino
 class camino{
     constructor(c,l,s,m){
         this.c = [];
@@ -70,12 +72,14 @@ class camino{
     }
 }
 
+
 //Variables Automatas y Caminos
 let automataPila1 = new automata;
 let caminoPila1 = new camino;
 
 let automataPila2 = new automata;
 let caminoPila2 = new camino;
+
 
 let automataUnion = new automata;
 let caminoUnion = new camino;
@@ -337,6 +341,7 @@ const guardarSelectPushAu2 = () => {
     }
 }
 
+
 //Funcion Imagen de su automata Pila
 const crearAuPila = (auxAu,auxCa) => {
     let Au =  JSON.parse(JSON.stringify(auxAu));
@@ -523,6 +528,10 @@ const crearAuConca = (auxAu,auxCa,auxAu2,auxCa2) => {
     return finC;
 }
 
+    fin = 'https://quickchart.io/graphviz?graph=digraph{poi[shape=point];poi->q0[label=Inicio];'+Au.k[final]+'[shape=doublecircle];'+transQs+caminos+'}';
+    return fin;
+}
+
 //Eventos Formulario 1
 btn0.addEventListener('click', (evt) => {
     numAlfAu = document.getElementById("alfabeto-au").value;
@@ -564,7 +573,7 @@ btn3.addEventListener('click', (evt) => {
     console.log(caminoPila1.l);
     console.log(caminoPila1.s);
     console.log(caminoPila1.m);
-
+  
     imgAuPila.setAttribute('src',`${crearAuPila(automataPila1,caminoPila1)}`);
 })
 
@@ -609,6 +618,7 @@ btn7.addEventListener('click', (evt) => {
     console.log(caminoPila2.l);
     console.log(caminoPila2.s);
     console.log(caminoPila2.m);
+
 
     imgAuPilaAu2.setAttribute('src',`${crearAuPila(automataPila2,caminoPila2)}`);
 
