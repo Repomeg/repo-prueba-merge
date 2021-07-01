@@ -528,10 +528,6 @@ const crearAuConca = (auxAu,auxCa,auxAu2,auxCa2) => {
     return finC;
 }
 
-    fin = 'https://quickchart.io/graphviz?graph=digraph{poi[shape=point];poi->q0[label=Inicio];'+Au.k[final]+'[shape=doublecircle];'+transQs+caminos+'}';
-    return fin;
-}
-
 //Eventos Formulario 1
 btn0.addEventListener('click', (evt) => {
     numAlfAu = document.getElementById("alfabeto-au").value;
